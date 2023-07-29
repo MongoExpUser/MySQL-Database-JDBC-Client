@@ -1,4 +1,4 @@
-# Mysql-Database-JDBC-Client
+# MySQL-Database-JDBC-Client
 
 ## Purpose    
 * Create connection and run queries against MySQL Database with MySQL Connector/J, the official JDBC driver for MySQL.
