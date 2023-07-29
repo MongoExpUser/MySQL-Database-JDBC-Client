@@ -1,2 +1,2 @@
-# Mysql-Database-Jdbc-Client
+# Mysql-Database-JDBC-Client
 MySQL Database JDBC Client
