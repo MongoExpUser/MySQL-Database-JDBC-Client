@@ -11,7 +11,7 @@
 *                                                                                                                                                   *
 *  DBClient.java implements DBClient() class for: including:                                                                                        *
 *                                                                                                                                                   *
-*  1) Connecting/disconnecting to RDMS databases with JDBC.                                                                                         *
+*  1) Connecting/disconnecting to MySQL database with JDBC.                                                                                         *
 *                                                                                                                                                   *
 *  2) Running queries against databases on the MySQl Databases                                                                                      *
 *                                                                                                                                                   *                                                                                                                                                                                                                    
