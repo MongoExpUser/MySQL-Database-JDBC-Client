@@ -169,7 +169,7 @@ public class DBClient
             FileReader fr = new FileReader(filename);
             BufferedReader br = new BufferedReader(fr);
             
-            while( (line = br.readLine()) !=null )
+            while( (line = br.readLine()) != null )
             {
                 query = query + line;
             }
