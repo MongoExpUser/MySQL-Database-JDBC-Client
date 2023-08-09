@@ -68,7 +68,7 @@ public class DBClient
         
         if(sslOption == true)
         {
-            connectionString =  String.format("jdbc:%s://%s:%s/%s?user=%s&password=%ssslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s", 
+            connectionString =  String.format("jdbc:%s://%s:%s/%s?user=%s&password=%ssslmode=%s&sslcert=%s&sslkey=%s&sslca=%s", 
                                               rdmsName, endpoint, String.valueOf(port), databaseName, user, password, sslmode, sslcert, 
                                               sslkey, sslca);
         }
