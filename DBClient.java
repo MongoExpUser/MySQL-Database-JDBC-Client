@@ -62,7 +62,7 @@ public class DBClient
         String sslmode = "VERIFY_CA";
         String sslcert = certPaths[0];
         String sslkey = certPaths[1];
-        String sslrootcert = certPaths[2];
+        String sslca = certPaths[2];
 
         // "sslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s"
         
@@ -70,7 +70,7 @@ public class DBClient
         {
             connectionString =  String.format("jdbc:%s://%s:%s/%s?user=%s&password=%ssslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s", 
                                               rdmsName, endpoint, String.valueOf(port), databaseName, user, password, sslmode, sslcert, 
-                                              sslkey, sslrootcert);
+                                              sslkey, sslca);
         }
         else
         {
@@ -211,7 +211,7 @@ public class DBClient
         String queryOne;
         String queryTwo;
         String queryThree;
-        String [] certPaths = { "path_to_cert", "path_to_key", "path_to_root_cert" };
+        String [] certPaths = { "path_to_cert", "path_to_key", "path_to_ca"};
 
         try
         {
