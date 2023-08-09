@@ -211,6 +211,7 @@ public class DBClient
         String queryOne;
         String queryTwo;
         String queryThree;
+        String [] certPaths = { "path_to_cert", "path_to_key", "ath_to_root_cert" };
 
         try
         {
@@ -223,7 +224,7 @@ public class DBClient
                 String [] queryListOptionOne = { queryOne, queryTwo, queryThree };
                 separator();
                 Connection conn;
-                conn = dbClient.connectDB(user, password, endpoint, port, databaseName,  rdmsName, sslOption);
+                conn = dbClient.connectDB(user, password, endpoint, port, databaseName,  rdmsName, sslOption, certPaths);
                 dbClient.executeQueries(conn, queryListOptionOne);
             }
 
@@ -238,7 +239,7 @@ public class DBClient
                 String [] queryListOptionTwo = { queryOne, queryTwo, queryThree };
                 separator();
                 Connection conn;
-                conn = dbClient.connectDB(user, password, endpoint, port, databaseName,  rdmsName, sslOption);
+                conn = dbClient.connectDB(user, password, endpoint, port, databaseName,  rdmsName, sslOption, certPaths);
                 dbClient.executeQueries(conn, queryListOptionTwo);
             }
             
