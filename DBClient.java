@@ -211,7 +211,7 @@ public class DBClient
         String queryOne;
         String queryTwo;
         String queryThree;
-        String [] certPaths = { "path_to_cert", "path_to_key", "ath_to_root_cert" };
+        String [] certPaths = { "path_to_cert", "path_to_key", "path_to_root_cert" };
 
         try
         {
