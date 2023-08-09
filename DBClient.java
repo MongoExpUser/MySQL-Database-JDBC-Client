@@ -56,19 +56,25 @@ public class DBClient
         
     }
     
-    public String dbConnectionString(String user, String password, String endpoint, int port, String databaseName, String rdmsName, boolean sslOption)
+   public String dbConnectionString(String user, String password, String endpoint, int port, String databaseName, String rdmsName, boolean sslOption, String [] certPaths)
     {
         String connectionString = null;
+        String sslmode = "VERIFY_CA";
+        String sslcert = certPaths[0];
+        String sslkey = certPaths[1];
+        String sslrootcert = certPaths[2];
+
+        // "sslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s"
         
         if(sslOption == true)
         {
-            //connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=true" + "&user=" + user + "&password=" + password;
-            connectionString =  String.format("jdbc:%s://%s:%s/%s?useSSL=true&user=%s&password=%s", rdmsName, endpoint, String.valueOf(port), databaseName, user, password);
+            connectionString =  String.format("jdbc:%s://%s:%s/%s?user=%s&password=%ssslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s", 
+                                              rdmsName, endpoint, String.valueOf(port), databaseName, user, password, sslmode, sslcert, 
+                                              sslkey, sslrootcert);
         }
         else
         {
-            //connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=false" + "&user=" + user + "&password=" + password;
-            connectionString =  String.format("jdbc:%s://%s:%s/%s?useSSL=false&user=%s&password=%s", rdmsName, endpoint, String.valueOf(port), databaseName, user, password);
+            connectionString =  String.format("jdbc:%s://%s:%s/%s?user=%s&password=%s", rdmsName, endpoint, String.valueOf(port), databaseName, user, password);
         }
         
         return connectionString;
