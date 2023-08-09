@@ -62,11 +62,13 @@ public class DBClient
         
         if(sslOption == true)
         {
-            connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=true" + "&user=" + user + "&password=" + password;
+            //connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=true" + "&user=" + user + "&password=" + password;
+            connectionString =  String.format("jdbc:%s://%s:%s/%s?useSSL=true&user=%s&password=%s", rdmsName, endpoint, String.valueOf(port), databaseName, user, password);
         }
         else
         {
-            connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=false" + "&user=" + user + "&password=" + password;
+            //connectionString = "jdbc:" + rdmsName + "://" + endpoint + ":" + String.valueOf(port) + "/" + databaseName + "?" +  "useSSL=false" + "&user=" + user + "&password=" + password;
+            connectionString =  String.format("jdbc:%s://%s:%s/%s?useSSL=false&user=%s&password=%s", rdmsName, endpoint, String.valueOf(port), databaseName, user, password);
         }
         
         return connectionString;
