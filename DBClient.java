@@ -198,7 +198,7 @@ public class DBClient
 
     public void testDB()
     {
-        //instantiate class and define all input and arguement variables for db query
+        //instantiate class and define all input and argument variables for testing db query
         DBClient dbClient = new DBClient();
         String user = "user"; 
         String password = "password";
