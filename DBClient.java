@@ -51,7 +51,7 @@ import java.io.IOException;
 public class DBClient
 {
   
-    public void DBClient()
+    public DBClient()
     {
         
     }
