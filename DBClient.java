@@ -64,8 +64,6 @@ public class DBClient
         String sslkey = certPaths[1];
         String sslca = certPaths[2];
         String sslcapath = certPaths[3];
-
-        // "sslmode=%s&sslcert=%s&sslkey=%s&sslrootcert=%s"
         
         if(sslOption == true)
         {
@@ -81,13 +79,13 @@ public class DBClient
         return connectionString;
     }
   
-    public Connection connectDB(String user, String password, String endpoint, int port, String databaseName, String rdmsName, boolean sslOption)
+    public Connection connectDB(String user, String password, String endpoint, int port, String databaseName, String rdmsName, boolean sslOption, String [] certPaths)
     {
         Connection connection = null;
 
         try
         {
-            String connectionString = dbConnectionString(user, password, endpoint, port, databaseName, rdmsName, sslOption);
+            String connectionString = dbConnectionString(user, password, endpoint, port, databaseName, rdmsName, sslOption, certPaths);
             connection = DriverManager.getConnection(connectionString);
     
             if(connection instanceof Connection)
@@ -122,7 +120,7 @@ public class DBClient
                     
                     String query = queryList[index];
                     System.out.println(query);
-                    dbClient.separator();
+                    separator();
                     
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd = rs.getMetaData();
@@ -139,10 +137,10 @@ public class DBClient
                             System.out.println();
                         }
                         
-                        dbClient.smallSeparator();
+                        smallSeparator();
                     }
                     
-                    dbClient.separator();
+                    separator();
                     rs.close();
                 }
                 
